@@ -1,0 +1,3 @@
+[submodule "autoitx4java"]
+	path = autoitx4java
+	url = git@github.com:SebastianGlonner/autoitx4java.git
