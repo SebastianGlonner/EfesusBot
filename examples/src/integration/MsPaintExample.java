@@ -24,8 +24,7 @@ public class MsPaintExample {
 
     static public void doExample() throws InterruptedException, AWTException, IOException {
         Libs.loadAutoItX();
-
-        System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
+        Libs.loadOpenCv();
 
         String paintWindowTitle = "Unbenannt - Paint";
 

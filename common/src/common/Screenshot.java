@@ -18,4 +18,9 @@ public class Screenshot {
         Rectangle screenRect = new Rectangle(Toolkit.getDefaultToolkit().getScreenSize());
         return getRobot().createScreenCapture(screenRect);
     }
+
+    static public BufferedImage take(int x, int y, int width, int height) throws AWTException {
+        Rectangle screenRect = new Rectangle(x, y, width, height);
+        return getRobot().createScreenCapture(screenRect);
+    }
 }

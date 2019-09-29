@@ -13,11 +13,11 @@ public class Main {
 
             // AutoXItExample.doEample();
 
-            // OpenCvBasic.doEample();
+            OpenCvBasic.doEample();
 
             // TakeScreenshot.doExample();
 
-            MsPaintExample.doExample();
+            // MsPaintExample.doExample();
 
         } catch (Exception e) {
             e.printStackTrace();

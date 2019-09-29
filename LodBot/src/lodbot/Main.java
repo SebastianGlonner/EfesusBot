@@ -1,28 +1,29 @@
 package lodbot;
 
+import common.Debug;
 import common.Point;
+import common.Screenshot;
 import common.WindowsBot;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class Main {
-    static public Logger log = LogManager.getLogger(Main.class);
+import java.awt.*;
 
-    public static void main(String[] args) {
+public class Main {
+    static private Logger log = LogManager.getLogger(Main.class);
+
+    public static void main(String[] args) throws AWTException {
+        long now = System.currentTimeMillis();
         try {
             WindowsBot winBot = WindowsBot.get();
-
-            String blueStacksHandle = "BlueStacks";
-            log.info(blueStacksHandle);
-
-            Point bsPoint = winBot.winPos(blueStacksHandle);
-
-            log.info(bsPoint);
-
-            winBot.winMove(blueStacksHandle, 10, 10);
+            LodBot lodBot = new LodBot(winBot);
+            lodBot.mainLoop();
 
         } catch (Exception e) {
             e.printStackTrace();
+            Debug.writeScreenshot(Screenshot.take());
         }
+
+        System.out.println("@@@@@@@@@@@@@@@@@@@ bot run: " + (System.currentTimeMillis() - now));
     }
 }
